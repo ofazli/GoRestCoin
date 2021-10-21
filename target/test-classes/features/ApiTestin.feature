@@ -15,8 +15,8 @@ Feature: Api testing for CRUID operators
     And validate the user Status is "<Status>"
 
 
-    Examples:
+    Examples: User Details Table
       | Name       | Gender | Email            | Status |
-      | John Doe 8 | male   | john24@gmail.com | active |
+      | John Doe 8 | male   | john27@gmail.com | active |
 
 #examples i duzelenmek icin  option+command+L(MAC) ctrl+Alt+L(WIN)

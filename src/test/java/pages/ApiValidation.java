@@ -13,7 +13,7 @@ public Response response;
 
     public Response postMethod(String name, String gender, String email, String status) {
         String requestBody = updateBody(name, gender, email, status);
-        Response response = given().headers("Authorization", "Bearer 398dea14addf3a13e9340740bf04e624ff2dedbcb2434366995412675a35a46a",
+        Response response = given().headers("Authorization", "Bearer a050d9667ab723667c640a5530e62b07167c1a9406946ab73b3fb0a77f664628",
                 "Content-Type", "application/json","Accept", ContentType.JSON)
                 .body(requestBody)
                 .post();
