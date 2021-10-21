@@ -22,7 +22,7 @@ public class ApiSteps extends ApiValidation {
 
     @And("User creates new user with request body {string},{string},{string},{string}")
     public void userCreatesNewUserWithRequestBody(String name, String gender, String email, String status) {
-        postMethod(name,gender,email,status);
+        response = postMethod(name,gender,email,status);
     }
 
 
