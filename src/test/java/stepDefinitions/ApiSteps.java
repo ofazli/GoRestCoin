@@ -4,6 +4,7 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import junit.framework.AssertionFailedError;
@@ -108,6 +109,34 @@ public class ApiSteps extends ApiValidation {
 	public void updateUserWithRequestBody(String name, String gender, String email, String status) {
 		response = putMethod(name, gender, email, status);
 		response.prettyPrint();
+	}
+
+
+
+	/*
+	Post and Comment scenario start from here
+	 */
+
+	@Given("user sets {string} post")
+	public void userSetsPost(String endpointPost) {
+		RestAssured.basePath=endpointPost;
+	}
+
+	@And("create a post with given userId and create one {string} and {string}")
+	public void createAPostWithGivenUserIdAndCreateOneAnd(String body, String title) {
+		response = postMethodCreate(body, title);
+		response.prettyPrint();
+	}
+
+
+
+	@When("user sets {string} post and create one {string} using {string}, {string}, {string}, {string}")
+	public void userSetsPostAndCreateOneUsing(String EndpointComment, String comment, String userId, String name, String email, String commentBody) {
+
+	}
+
+	@Then("verift that  comment created {string}, {string}")
+	public void veriftThatCommentCreated(String name, String email) {
 	}
 
 

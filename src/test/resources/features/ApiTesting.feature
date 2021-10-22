@@ -34,6 +34,17 @@ Feature: Api testing for CRUID operators
       | John Doe 133 | male   | john27@gmail.com | active | 13956  |
 
 
+  Scenario Outline: Create a post and comment
+    Given user sets "<EndpointPost>" post
+    And create a post with given userId and create one "<Body>" and "<Title>"
+    When user sets "<EndpointComment>" post and create one "<Comment>" using "<userId>", "<name>", "<email>", "<comment body>"
+    Then verift that  comment created "<name>", "<email>"
+
+
+    Examples:
+      | EndpointPost                   | EndpointComment                   | userId | Body              | Title                  | Comment       | name    | email            | comment body         |
+      | public/v1/users/<userId>/posts | public/v1/posts/<userID>/comments | 13956  | Body post message | this is my first title | first comment | My Name | denmar@gmail.com | This is comment body |
+
     #############################################
   # Alternate scenario
 

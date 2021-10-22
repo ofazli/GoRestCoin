@@ -34,6 +34,16 @@ public class ApiValidation {
 
 		return response;
 	}
+	public Response postMethodCreate(String body, String title) {
+		String requestBody = updatePostBody(body, title);
+		Response response = given()
+				.headers("Authorization", "Bearer 702e5484ddf8d39e2d194b7fa753f33d38b8937e6c57a0101662fef7e202c425",
+						"Content-Type", "application/json", "Accept", ContentType.JSON)
+				.body(requestBody)
+				.post();
+
+		return response;
+	}
 
 	private String updateBody(String name, String gender, String email, String status) {
 		String body = "";
@@ -49,5 +59,17 @@ public class ApiValidation {
 		return body;
 	}
 
+	private String updatePostBody(String postbody, String title) {
+		String body = "";
+		try {
+			body = new String(Files.readAllBytes(Paths.get(System.getProperty("user.dir") + File.separator + "src/test/resources/data/postCreate.json")));
+			body = body.replaceAll("replaceBody", postbody);
+			body = body.replaceAll("replaceTitle", title);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return body;
+	}
 
 }
