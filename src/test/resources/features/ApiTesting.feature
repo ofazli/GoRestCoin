@@ -16,25 +16,22 @@ Feature: Api testing for CRUID operators
     And validate the user Status is "<Status>"
 
     Examples: User Details table
-      | Name       | Gender | Email             | Status |
-      | John Doe 8 | male   | john26@gmail.comn | active |
-
-
+      | Name       | Gender | Email            | Status |
+      | John Doe 8 | male   | john26@gmail.com | active |
 
 
   Scenario Outline: PUT-Update a existing user data
     Given set api endpoint "public/v1/users/""<userId>"
     And Update user with request body "<Name>","<Gender>","<Email>","<Status>"
-    Then validate the status code "status code"
-    And validate the userId is not null
+    Then validate the status code 200
     And validate the user Name is "<Name>"
     And validate the user Gender is "<Gender>"
     And validate the user Email is "<Email>"
     And validate the user Status is "<Status>"
 
     Examples: User Details table
-      | Name        | Gender | Email             | Status | userId | status code |
-      | John Doe 33 | female | john26@gmail.comn | active | 13956  |200          |
+      | Name         | Gender | Email            | Status | userId |
+      | John Doe 133 | male   | john27@gmail.com | active | 13956  |
 
 
     #############################################

@@ -101,12 +101,13 @@ public class ApiSteps extends ApiValidation {
 
 	@Given("set api endpoint {string}{string}")
 	public void setApiEndpoint(String endpoint, String userId) {
-		RestAssured.basePath=endpoint+userId;
+		RestAssured.basePath=(endpoint+userId);
 	}
 
 	@And("Update user with request body {string},{string},{string},{string}")
 	public void updateUserWithRequestBody(String name, String gender, String email, String status) {
 		response = putMethod(name, gender, email, status);
+		response.prettyPrint();
 	}
 
 
