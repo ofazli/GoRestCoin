@@ -31,7 +31,7 @@ public class ApiValidation {
 	public Response postMethod(String name, String gender, String email, String status) {
 		String requestBody = updateBody(name, gender, email, status);
 		Response response = given()
-				.headers("Authorization", "Bearer 7c1158095623c6486eae51ffd8f901971ac32060fe9dde5f0c94c14404817c0d",
+				.headers("Authorization", "Bearer 8ef2e192e73b42e35276a730333416b939b6d537a39b7dcbb1619fafd539ab13",
 						"Content-Type", "application/json", "Accept", ContentType.JSON)
 				.body(requestBody)
 				.post();
@@ -42,7 +42,7 @@ public class ApiValidation {
 	public Response putMethod(String name, String gender, String email, String status) {
 		String requestBody = updateBody(name, gender, email, status);
 		Response response = given()
-				.headers("Authorization", "Bearer 7c1158095623c6486eae51ffd8f901971ac32060fe9dde5f0c94c14404817c0d",
+				.headers("Authorization", "Bearer 8ef2e192e73b42e35276a730333416b939b6d537a39b7dcbb1619fafd539ab13",
 						"Content-Type", "application/json", "Accept", ContentType.JSON)
 				.body(requestBody)
 				.put();
@@ -67,7 +67,7 @@ public class ApiValidation {
 	public Response postMethodCreate(String body, String title) {
 		String requestBody = updatePostBody(body, title);
 		Response response = given()
-				.headers("Authorization", "Bearer 7c1158095623c6486eae51ffd8f901971ac32060fe9dde5f0c94c14404817c0d",
+				.headers("Authorization", "Bearer 8ef2e192e73b42e35276a730333416b939b6d537a39b7dcbb1619fafd539ab13",
 						"Content-Type", "application/json", "Accept", ContentType.JSON)
 				.body(requestBody)
 				.post();
@@ -91,7 +91,7 @@ public class ApiValidation {
 	public Response postMethodComment(String comment, String name, String email) {
 		String requestBody = updatePostBody(comment, name,email);
 		Response response = given()
-				.headers("Authorization", "Bearer 7c1158095623c6486eae51ffd8f901971ac32060fe9dde5f0c94c14404817c0d",
+				.headers("Authorization", "Bearer 8ef2e192e73b42e35276a730333416b939b6d537a39b7dcbb1619fafd539ab13",
 						"Content-Type", "application/json", "Accept", ContentType.JSON)
 				.body(requestBody)
 				.post();

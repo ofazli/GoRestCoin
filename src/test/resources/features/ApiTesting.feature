@@ -44,6 +44,10 @@ Feature: Api testing for CRUID operators
       | public/v1/users/<userId>/posts | public/v1/posts/<userId>/comments | 13954  | Body post message | this is my first title | first comment | My Name | john36@gmail.com | This is comment body |
 
 
+
+
+
+
     ####################################################
   # Alternate scenario
 
@@ -56,4 +60,5 @@ Feature: Api testing for CRUID operators
     And validate the user Gender is "male"
     And validate the user Email is "john26@gmail.comn"
     And validate the user Status is "active"
+
 
